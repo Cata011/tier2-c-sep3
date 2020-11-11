@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-//@RequestMapping("https://localhost:8080")
 public class ComponentsController {
 
     @Autowired

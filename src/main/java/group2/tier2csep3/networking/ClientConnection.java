@@ -9,21 +9,18 @@ import java.net.Socket;
 
 @org.springframework.stereotype.Component
 public class ClientConnection implements SocketClient {
-    private Socket socket;
+//    private Socket socket;
 
     @Override
-    public ComponentList getAllComponents() {
+    public ComponentList getAllComponents() {           //TODO: maybe separate common parts from this method so that you don't have repeatable files
         try {
             Gson gson = new Gson();
             Socket socket = new Socket("localhost", 2910);
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
 
-
             NetworkPackage request = new ComponentEnum();
-            System.out.println(request);
             String requestString = gson.toJson(request.getType());
-            System.out.println(requestString);
             byte[] requestBytes = requestString.getBytes();
             out.write(requestBytes);
 
@@ -66,7 +63,7 @@ public class ClientConnection implements SocketClient {
         try {
 //            in.close();
 //            out.close();
-            socket.close();
+//            socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
