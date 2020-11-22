@@ -1,4 +1,4 @@
-package group2.tier2csep3.model;
+package group2.tier2csep3.model.component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -7,22 +7,21 @@ import java.io.Serializable;
 @org.springframework.stereotype.Component
 public class Component implements Serializable {
     @JsonProperty("id")
-        private int id;
+    private int id;
     @JsonProperty("name")
-        private String name;
+    private String name;
     @JsonProperty("type")
-        private String type;
+    private String type;
     @JsonProperty("releaseYear")
-        private String releaseYear;
+    private String releaseYear;
     @JsonProperty("brand")
-        private String brand;
+    private String brand;
     @JsonProperty("additionalInformation")
-        private String additionalInformation;
+    private String additionalInformation;
 
-        public Component()
-        {
+    public Component() {
 
-        }
+    }
 
     public int getId() {
         return id;

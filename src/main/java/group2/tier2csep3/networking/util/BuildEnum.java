@@ -1,9 +1,9 @@
 package group2.tier2csep3.networking.util;
 
-public class ComponentEnum extends NetworkPackage {
+public class BuildEnum extends NetworkPackage{
 
 
-    public ComponentEnum(NetworkType type, Object content) {
+    public BuildEnum(NetworkType type, Object content) {
         super(type, content);
     }
 

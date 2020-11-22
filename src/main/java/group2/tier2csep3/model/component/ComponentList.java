@@ -1,4 +1,4 @@
-package group2.tier2csep3.model;
+package group2.tier2csep3.model.component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

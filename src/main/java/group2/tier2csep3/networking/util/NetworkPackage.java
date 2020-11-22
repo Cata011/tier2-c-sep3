@@ -1,15 +1,32 @@
 package group2.tier2csep3.networking.util;
 
-public class NetworkPackage {
-    private NetworkType type;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-    public NetworkPackage(NetworkType type)
-    {
+public class NetworkPackage {
+
+    @JsonProperty("type")
+    private NetworkType type;
+    @JsonProperty("content")
+    private Object content;         //TODO: REMEMEMBER THAT IN TIER 3 YOU HAVE TO HAVE DIFFERENT HANDLERS AND DESERIALIZE THE OBJECT TYPE OBJECT DIRECTLY INTO SOMETHING SPEIFIC. OTHERWISE, LIKE TROELS SAID, MAKE STRING INSTEAD OF OBJECT AND SERIALIZE/DESERIALIZE TWICE
+
+    public NetworkPackage(NetworkType type, Object content) {
         this.type = type;
+        this.content = content;
     }
 
-    public NetworkType getType()
-    {
+    public NetworkType getType() {
         return type;
+    }
+
+    public Object getContent() {
+        return content;
+    }
+
+    @Override
+    public String toString() {
+        return "NetworkPackage{" +
+                "type=" + type +
+                ", content=" + content +
+                '}';
     }
 }
