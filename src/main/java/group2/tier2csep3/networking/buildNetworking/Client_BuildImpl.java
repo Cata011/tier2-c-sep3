@@ -17,7 +17,7 @@ public class Client_BuildImpl implements Client_Build {
     @Override
     public BuildList getMyBuilds(int userId) {
         Gson gson = new Gson();
-        NetworkPackage networkPackage = new BuildEnum(NetworkType.BUILDS, userId);
+        NetworkPackage networkPackage = new BuildEnum(NetworkType.BUILDS, String.valueOf(userId));
         String input = client.communicate(networkPackage);
         return gson.fromJson(input, BuildList.class);
     }

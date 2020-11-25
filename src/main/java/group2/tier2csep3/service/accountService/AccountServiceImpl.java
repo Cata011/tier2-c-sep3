@@ -7,11 +7,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AccountServiceImpl implements AccountService {
 
-    private Account account;
     private Client_Account client_account;
 
     public AccountServiceImpl(Client_Account client_account) {
-        this.account = new Account();
         this.client_account = client_account;
     }
 

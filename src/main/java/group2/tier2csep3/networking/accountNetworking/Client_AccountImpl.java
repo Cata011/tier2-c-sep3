@@ -18,14 +18,17 @@ public class Client_AccountImpl implements Client_Account {
     public Account getMyAccount(String username, String password) {
         Gson gson = new Gson();
         Account account = new Account(username, password);
-        NetworkPackage networkPackage = new LoginEnum(NetworkType.LOGIN, account);
+        String serializedAccount = gson.toJson(account);
+        NetworkPackage networkPackage = new LoginEnum(NetworkType.LOGIN, serializedAccount);
         String input = client.communicate(networkPackage);
         return gson.fromJson(input, Account.class);
     }
 
     @Override
     public void register(Account account) {
-        NetworkPackage networkPackage = new RegisterEnum(NetworkType.REGISTER, account);
+        Gson gson = new Gson();
+        String serializedAccount = gson.toJson(account);
+        NetworkPackage networkPackage = new RegisterEnum(NetworkType.REGISTER, serializedAccount);
         client.communicate(networkPackage);
     }
 }

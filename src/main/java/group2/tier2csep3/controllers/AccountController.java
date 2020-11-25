@@ -11,13 +11,14 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
-    @GetMapping("/accounts?UserName={username}&Password={password}")
+    @GetMapping(value ={"?accounts/Username={username}&Password={password}"})
     public Account getMyAccount(@PathVariable String username, @PathVariable String password) {
-        return accountService.getMyAccount(username, password);
+                return accountService.getMyAccount(username, password);
     }
 
     @PostMapping("/accounts")
     public void register(@RequestBody Account account) {
+        System.out.println(account);
         accountService.register(account);
     }
 }

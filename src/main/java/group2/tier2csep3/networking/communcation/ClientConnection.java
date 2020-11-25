@@ -171,7 +171,7 @@ public class ClientConnection implements SocketClient {
     @Override
     public void startClient() {
         try {
-            new Thread(() -> communicate(new NetworkPackage(NetworkType.CONNECTION, new Object()))).start();
+            new Thread(() -> communicate(new NetworkPackage(NetworkType.CONNECTION, "conFromTier2"))).start();
         }
         catch (Exception e)
         {
@@ -209,7 +209,7 @@ public class ClientConnection implements SocketClient {
                 updatedString += string.charAt(i);
             }
 
-            if(!updatedString.equals("con")) {
+            if(!updatedString.equals("conFromTier3")) {
                 return updatedString;
             }
             else System.out.println("mata");
