@@ -29,6 +29,13 @@ public class BuildList implements Serializable {
         return -1;
     }
 
+    @Override
+    public String toString() {
+        return "BuildListtttttttttttttttttttttttttttt{" +
+                "Builds=" + Builds +
+                '}';
+    }
+
     public int size()
     {
         return Builds.size();

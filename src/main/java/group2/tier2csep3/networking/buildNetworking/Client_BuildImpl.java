@@ -19,6 +19,12 @@ public class Client_BuildImpl implements Client_Build {
         Gson gson = new Gson();
         NetworkPackage networkPackage = new BuildEnum(NetworkType.BUILDS, String.valueOf(userId));
         String input = client.communicate(networkPackage);
+
+//        System.out.println(input);
+
+        //        System.out.println("Lista:" + buildList);
+
+//        System.out.println("Networking - 1");
         return gson.fromJson(input, BuildList.class);
     }
 }

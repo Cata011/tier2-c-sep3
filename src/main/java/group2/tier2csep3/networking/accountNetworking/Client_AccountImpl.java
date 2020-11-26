@@ -17,10 +17,15 @@ public class Client_AccountImpl implements Client_Account {
     @Override
     public Account getMyAccount(String username, String password) {
         Gson gson = new Gson();
-        Account account = new Account(username, password);
+        Account account = new Account();
+        account.setUsername(username);
+        account.setPassword(password);
         String serializedAccount = gson.toJson(account);
         NetworkPackage networkPackage = new LoginEnum(NetworkType.LOGIN, serializedAccount);
         String input = client.communicate(networkPackage);
+
+        System.out.println("ZZZZZZZZZ " + input);
+
         return gson.fromJson(input, Account.class);
     }
 

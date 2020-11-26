@@ -187,11 +187,11 @@ public class ClientConnection implements SocketClient {
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
 
-            System.out.println(networkPackage.toString());
+            System.out.println("Network package: " + networkPackage.toString());
 
             String request = gson.toJson(networkPackage);
 
-            System.out.println(request);
+            System.out.println("Json" + request);
 
             byte[] requestBytes = request.getBytes();
             out.write(requestBytes);
@@ -210,6 +210,7 @@ public class ClientConnection implements SocketClient {
             }
 
             if(!updatedString.equals("conFromTier3")) {
+                System.out.println(updatedString);
                 return updatedString;
             }
             else System.out.println("mata");

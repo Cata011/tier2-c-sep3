@@ -7,17 +7,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class BuildServiceImpl implements BuildService {
 
-    private BuildList buildList;
     private Client_Build client_build;
 
     public BuildServiceImpl(Client_Build client_build)
     {
-        this.buildList = new BuildList();
+
         this.client_build = client_build;
     }
 
     @Override
     public BuildList getMyBuilds(int userId) {
+
+//        System.out.println("BuildService: " + client_build.getMyBuilds(userId));
+
+//        System.out.println("Service - 2");
         return client_build.getMyBuilds(userId);
     }
 }
