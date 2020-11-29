@@ -1,5 +1,6 @@
 package group2.tier2csep3.model.build;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 @Component
 public class BuildList implements Serializable {
 
+    @JsonProperty
     private ArrayList<Build> Builds;
 
     public BuildList()
