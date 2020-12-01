@@ -5,6 +5,8 @@ import group2.tier2csep3.service.accountService.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 public class AccountController {
 
@@ -13,7 +15,7 @@ public class AccountController {
 
     @GetMapping("/login")
     public Account getMyAccount(@RequestBody Account account) {
-                return accountService.getMyAccount(account.getUsername(), account.getPassword());
+                return accountService.validateAccount(account.getUsername(), account.getPassword());
     }
 
     @PostMapping("/register")
@@ -21,4 +23,17 @@ public class AccountController {
         System.out.println(account);
         accountService.register(account);
     }
+
+    @PatchMapping("/accounts")
+    public void editAccount(@RequestBody Account account)
+    {
+        accountService.editAccount(account);
+    }
+
+    @DeleteMapping("/accounts")
+    public void deleteAccount(@RequestParam("UserId") int userId)
+    {
+        accountService.deleteAccount(userId);
+    }
 }
+

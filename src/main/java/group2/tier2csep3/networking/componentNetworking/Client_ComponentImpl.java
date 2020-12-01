@@ -3,6 +3,7 @@ package group2.tier2csep3.networking.componentNetworking;
 import com.google.gson.Gson;
 import group2.tier2csep3.model.component.ComponentList;
 import group2.tier2csep3.networking.communcation.SocketClient;
+import group2.tier2csep3.networking.util.AddNewComponentEnum;
 import group2.tier2csep3.networking.util.ComponentEnum;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
@@ -22,5 +23,14 @@ public class Client_ComponentImpl implements Client_Component {
         NetworkPackage networkPackage = new ComponentEnum(NetworkType.COMPONENTS, null);
         String input =  client.communicate(networkPackage);
         return gson.fromJson(input, ComponentList.class);
+    }
+
+    @Override
+    public void addNewComponent(group2.tier2csep3.model.component.Component component) {
+        Gson gson = new Gson();
+        String componentSerialized = gson.toJson(component);
+        NetworkPackage networkPackage = new AddNewComponentEnum(NetworkType.ADDNEWCOMPONENT, componentSerialized);
+        client.communicate(networkPackage);
+
     }
 }

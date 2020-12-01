@@ -14,8 +14,8 @@ public class Build implements Serializable {
     private int userId;
     @JsonProperty("name")
     private String name;
-    @JsonProperty("componentList")
-    private ComponentList componentList;
+    @JsonProperty("ComponentList")
+    private ComponentList ComponentList;
 
     public Build()
     {
@@ -46,21 +46,21 @@ public class Build implements Serializable {
         this.name = name;
     }
 
-    public ComponentList getComponentList() {
-        return componentList;
-    }
-
-    public void setComponentList(ComponentList componentList) {
-        this.componentList = componentList;
-    }
-
-    @Override
-    public String toString() {
-        return "Build{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", name='" + name + '\'' +
-                ", componentList=" + componentList +
-                '}';
-    }
+//    public ComponentList getComponentList() {
+//        return Components;
+//    }
+//
+//    public void setComponentList(ComponentList componentList) {
+//        this.Components = componentList;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Build{" +
+//                "id=" + id +
+//                ", userId=" + userId +
+//                ", name='" + name + '\'' +
+//                ", componentList=" + Components +
+//                '}';
+//    }
 }
