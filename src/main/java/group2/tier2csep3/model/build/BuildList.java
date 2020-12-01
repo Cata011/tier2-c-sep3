@@ -33,7 +33,7 @@ public class BuildList implements Serializable {
 
     @Override
     public String toString() {
-        return "BuildListtttttttttttttttttttttttttttt{" +
+        return "BuildList{" +
                 "Builds=" + Builds +
                 '}';
     }

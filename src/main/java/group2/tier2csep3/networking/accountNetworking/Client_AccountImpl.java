@@ -23,9 +23,6 @@ public class Client_AccountImpl implements Client_Account {
         String serializedAccount = gson.toJson(account);
         NetworkPackage networkPackage = new LoginEnum(NetworkType.LOGIN, serializedAccount);
         String input = client.communicate(networkPackage);
-
-        System.out.println("ZZZZZZZZZ " + input);
-
         return gson.fromJson(input, Account.class);
     }
 

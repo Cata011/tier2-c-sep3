@@ -14,11 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Tier2CSep3Application {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         SocketClient client = new ClientConnection();
-//        ComponentService componentService = new ComponentServiceImpl(client);
-//        AccountService accountService = new AccountServiceImpl(client);
-//        BuildService buildService = new BuildServiceImpl(client);
         client.startClient();
         SpringApplication.run(Tier2CSep3Application.class, args);
     }

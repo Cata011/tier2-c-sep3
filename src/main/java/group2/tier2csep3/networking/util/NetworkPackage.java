@@ -7,7 +7,7 @@ public class NetworkPackage {
     @JsonProperty("type")
     private NetworkType type;
     @JsonProperty("content")
-    private String content;         //TODO: REMEMEMBER THAT IN TIER 3 YOU HAVE TO HAVE DIFFERENT HANDLERS AND DESERIALIZE THE OBJECT TYPE OBJECT DIRECTLY INTO SOMETHING SPEIFIC. OTHERWISE, LIKE TROELS SAID, MAKE STRING INSTEAD OF OBJECT AND SERIALIZE/DESERIALIZE TWICE
+    private String content;
 
     public NetworkPackage(NetworkType type, String content) {
         this.type = type;

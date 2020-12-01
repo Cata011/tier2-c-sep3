@@ -56,7 +56,7 @@ public class Build implements Serializable {
 
     @Override
     public String toString() {
-        return "Buildddddddddddddddddddddddddd{" +
+        return "Build{" +
                 "id=" + id +
                 ", userId=" + userId +
                 ", name='" + name + '\'' +

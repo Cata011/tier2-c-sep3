@@ -17,10 +17,6 @@ public class BuildServiceImpl implements BuildService {
 
     @Override
     public BuildList getMyBuilds(int userId) {
-
-//        System.out.println("BuildService: " + client_build.getMyBuilds(userId));
-
-//        System.out.println("Service - 2");
         return client_build.getMyBuilds(userId);
     }
 }

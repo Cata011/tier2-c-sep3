@@ -19,19 +19,6 @@ public class BuildsController {
     public
     BuildList getMyBuilds(@RequestParam("UserId") int userId)
     {
-        System.out.println("USER: " + userId);
-//        System.out.println("Controller " + buildService.getMyBuilds(userId));
-
-//        System.out.println("Controller - 3");
-//        BuildList list = buildService.getMyBuilds(userId);
-//        System.out.println("Controller final                        :"  );
-//        for (int i = 0 ;i<list.size();i++)
-//        {
-//            System.out.println(list.getBuild(i));
-//        }
-
-//        List<Build> d = new ArrayList<>();
-//        d.add(list.getBuild(0));
         return buildService.getMyBuilds(userId);
     }
 
