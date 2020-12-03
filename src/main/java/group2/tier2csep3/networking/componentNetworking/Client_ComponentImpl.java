@@ -3,8 +3,8 @@ package group2.tier2csep3.networking.componentNetworking;
 import com.google.gson.Gson;
 import group2.tier2csep3.model.component.ComponentList;
 import group2.tier2csep3.networking.communcation.SocketClient;
-import group2.tier2csep3.networking.util.AddNewComponentEnum;
-import group2.tier2csep3.networking.util.ComponentEnum;
+import group2.tier2csep3.networking.util.componentEnums.AddNewComponentEnum;
+import group2.tier2csep3.networking.util.componentEnums.ComponentEnum;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class Client_ComponentImpl implements Client_Component {
 
     @Autowired
-    private SocketClient client; //TODO: or use normal dependency
+    private SocketClient client;
 
 
     @Override

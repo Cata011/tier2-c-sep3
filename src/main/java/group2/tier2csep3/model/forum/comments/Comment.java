@@ -1,20 +1,20 @@
 package group2.tier2csep3.model.forum.comments;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Comment {
-    @JsonProperty
+    @JsonProperty("id")
     private int id;
-    @JsonProperty
+    @JsonProperty("userId")
     private int userId;
-    @JsonProperty
+    @JsonProperty("postId")
+    private int postId;
+    @JsonProperty("content")
     private String content;
-    @JsonProperty
-    private int upVotes;
-    @JsonProperty
-    private int downVotes;
+    @JsonProperty("upVote")
+    private int upVote;
+    @JsonProperty("downVote")
+    private int downVote;
 
     public Comment(){
 
@@ -44,20 +44,20 @@ public class Comment {
         this.content = content;
     }
 
-    public int getUpVotes() {
-        return upVotes;
+    public int getUpVote() {
+        return upVote;
     }
 
-    public void setUpVotes(int upVotes) {
-        this.upVotes = upVotes;
+    public void setUpVote(int upVote) {
+        this.upVote = upVote;
     }
 
-    public int getDownVotes() {
-        return downVotes;
+    public int getDownVote() {
+        return downVote;
     }
 
-    public void setDownVotes(int downVotes) {
-        this.downVotes = downVotes;
+    public void setDownVote(int downVote) {
+        this.downVote = downVote;
     }
 
     @Override
@@ -66,8 +66,8 @@ public class Comment {
                 "id=" + id +
                 ", userId=" + userId +
                 ", content='" + content + '\'' +
-                ", upVotes=" + upVotes +
-                ", downVotes=" + downVotes +
+                ", upVote=" + upVote +
+                ", downVote=" + downVote +
                 '}';
     }
 }

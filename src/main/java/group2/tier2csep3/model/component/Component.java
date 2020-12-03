@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
-@org.springframework.stereotype.Component
 public class Component implements Serializable {
     @JsonProperty("id")
     private int id;

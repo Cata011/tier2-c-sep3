@@ -6,15 +6,15 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
-@Component
+
 public class Build implements Serializable {
-    @JsonProperty("id")
+    @JsonProperty
     private int id;
-    @JsonProperty("userId")
+    @JsonProperty
     private int userId;
-    @JsonProperty("name")
+    @JsonProperty
     private String name;
-    @JsonProperty("ComponentList")
+    @JsonProperty
     private ComponentList ComponentList;
 
     public Build()
@@ -46,21 +46,21 @@ public class Build implements Serializable {
         this.name = name;
     }
 
-//    public ComponentList getComponentList() {
-//        return Components;
-//    }
-//
-//    public void setComponentList(ComponentList componentList) {
-//        this.Components = componentList;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Build{" +
-//                "id=" + id +
-//                ", userId=" + userId +
-//                ", name='" + name + '\'' +
-//                ", componentList=" + Components +
-//                '}';
-//    }
+    public ComponentList getComponentList() {
+        return ComponentList;
+    }
+
+    public void setComponentList(ComponentList componentList) {
+        this.ComponentList = componentList;
+    }
+
+    @Override
+    public String toString() {
+        return "Build{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", name='" + name + '\'' +
+                ", componentList=" + ComponentList +
+                '}';
+    }
 }

@@ -5,9 +5,11 @@ import group2.tier2csep3.model.account.Account;
 public interface Client_Account {
     Account validateAccount(String username, String password);
 
-    void register(Account account);
+    String register(Account account);
 
-    void editAccount(Account account);
+    String editAccount(Account account);
 
     void deleteAccount(int userId);
+
+    Account getUserByUsername(String username);
 }

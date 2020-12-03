@@ -11,7 +11,6 @@ public class BuildServiceImpl implements BuildService {
 
     public BuildServiceImpl(Client_Build client_build)
     {
-
         this.client_build = client_build;
     }
 

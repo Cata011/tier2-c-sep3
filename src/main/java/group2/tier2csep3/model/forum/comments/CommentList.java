@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
 public class CommentList {
 
     @JsonProperty
@@ -14,5 +13,13 @@ public class CommentList {
     public CommentList()
     {
         this.Comments = new ArrayList<>();
+    }
+
+    public ArrayList<Comment> getComments() {
+        return Comments;
+    }
+
+    public void setComments(ArrayList<Comment> comments) {
+        Comments = comments;
     }
 }

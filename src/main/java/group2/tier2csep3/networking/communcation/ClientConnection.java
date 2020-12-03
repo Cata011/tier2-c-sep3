@@ -45,6 +45,7 @@ public class ClientConnection implements SocketClient {
             }
 
             if(!updatedString.equals("conFromTier3")) {
+                System.out.println("FromTier3"+ updatedString);
                 return updatedString;
             }
             else System.out.println("Client Connection problem");

@@ -1,27 +1,39 @@
 package group2.tier2csep3.model.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.stereotype.Component;
+import group2.tier2csep3.model.build.BuildList;
+import group2.tier2csep3.model.forum.comments.CommentList;
+import group2.tier2csep3.model.forum.posts.PostList;
 
 import java.io.Serializable;
 
-@Component
 public class Account implements Serializable {
 
-    @JsonProperty("id")
+    @JsonProperty
     private int id;
-    @JsonProperty("name")
+    @JsonProperty
     private String name;
-    @JsonProperty("username")
+    @JsonProperty
     private String username;
-    @JsonProperty("password")
+    @JsonProperty
     private String password;
+    @JsonProperty
+    private PostList Posts;
+//    @JsonProperty
+//    private CommentList Comments;
 
     public Account()
     {
 
     }
-    
+
+    public PostList getPosts() {
+        return Posts;
+    }
+
+    public void setPosts(PostList posts) {
+        Posts = posts;
+    }
 
     public int getId() {
         return id;

@@ -18,22 +18,28 @@ public class AccountController {
                 return accountService.validateAccount(account.getUsername(), account.getPassword());
     }
 
-    @PostMapping("/register")
-    public void register(@RequestBody Account account) {
+    @GetMapping("/register")
+    public String register(@RequestBody Account account) {
         System.out.println(account);
-        accountService.register(account);
+        return accountService.register(account);
     }
 
-    @PatchMapping("/accounts")
-    public void editAccount(@RequestBody Account account)
+    @GetMapping("/update")
+    public String editAccount(@RequestBody Account account)
     {
-        accountService.editAccount(account);
+        return accountService.editAccount(account);
     }
 
-    @DeleteMapping("/accounts")
-    public void deleteAccount(@RequestParam("UserId") int userId)
+    @DeleteMapping("/delete/{userId}")
+    public void deleteAccount(@PathVariable int userId)
     {
         accountService.deleteAccount(userId);
+    }
+
+    @GetMapping("/accounts")
+    public Account getUserByUsername(@RequestParam("Username") String username)
+    {
+        return accountService.getUserByUsername(username);
     }
 }
 

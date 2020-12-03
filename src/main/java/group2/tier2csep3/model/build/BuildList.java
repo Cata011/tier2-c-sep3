@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-@Component
+
 public class BuildList implements Serializable {
 
     @JsonProperty

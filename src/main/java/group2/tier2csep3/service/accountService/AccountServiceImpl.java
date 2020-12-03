@@ -19,17 +19,22 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void register(Account account) {
-        client_account.register(account);
+    public String register(Account account) {
+       return client_account.register(account);
     }
 
     @Override
-    public void editAccount(Account account) {
-        client_account.editAccount(account);
+    public String editAccount(Account account) {
+        return client_account.editAccount(account);
     }
 
     @Override
     public void deleteAccount(int userId) {
         client_account.deleteAccount(userId);
+    }
+
+    @Override
+    public Account getUserByUsername(String username) {
+        return client_account.getUserByUsername(username);
     }
 }
