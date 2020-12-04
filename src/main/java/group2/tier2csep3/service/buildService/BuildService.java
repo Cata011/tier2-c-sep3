@@ -6,9 +6,9 @@ import group2.tier2csep3.model.build.BuildList;
 public interface BuildService {
     BuildList getMyBuilds(int userId);
 
-//    void addBuild(Build build);
-//
-//    void editBuild(Build build);
-//
-//    void deleteBuild(int id);
+    void addBuild(Build build);
+
+    void editBuild(Build build);
+
+    void deleteBuild(int id);
 }

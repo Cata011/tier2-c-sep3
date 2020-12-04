@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import group2.tier2csep3.model.forum.comments.CommentList;
 import org.springframework.stereotype.Component;
 
-public class Post {
+import java.io.Serializable;
+
+public class Post implements Serializable {
     @JsonProperty
     private int id;
     @JsonProperty

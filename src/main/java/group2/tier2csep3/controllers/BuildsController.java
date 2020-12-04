@@ -22,22 +22,22 @@ public class BuildsController {
         return buildService.getMyBuilds(userId);
     }
 
-//    @PostMapping("/builds")
-//    public void addBuild(@RequestBody Build build)
-//    {
-//        buildService.addBuild(build);
-//    }
-//
-//    @PatchMapping("/builds")
-//    public void editBuild(@RequestBody Build build)
-//    {
-//        buildService.editBuild(build);
-//    }
-//
-//    @DeleteMapping("/build/{id}")
-//    public void deleteBuild(@RequestParam("id") int id)
-//    {
-//        buildService.deleteBuild(id);
-//    }
+    @PostMapping("/builds")
+    public void addBuild(@RequestBody Build build)
+    {
+        buildService.addBuild(build);
+    }
+
+    @PatchMapping("/builds")
+    public void editBuild(@RequestBody Build build)
+    {
+        buildService.editBuild(build);
+    }
+
+    @DeleteMapping("/builds/{id}")
+    public void deleteBuild(@PathVariable int id)
+    {
+        buildService.deleteBuild(id);
+    }
 
 }

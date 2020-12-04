@@ -28,6 +28,9 @@ public class ClientConnection implements SocketClient {
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
             String request = gson.toJson(networkPackage);
+
+            System.out.println("BAAAAAAAAAAAAAAAAAAAAAAAA" + request);
+
             byte[] requestBytes = request.getBytes();
             out.write(requestBytes);
 

@@ -19,19 +19,19 @@ public class BuildServiceImpl implements BuildService {
     public BuildList getMyBuilds(int userId) {
         return client_build.getMyBuilds(userId);
     }
-//
-//    @Override
-//    public void addBuild(Build build) {
-//        client_build.addBuild(build);
-//    }
-//
-//    @Override
-//    public void editBuild(Build build) {
-//        client_build.editBuild(build)
-//    }
-//
-//    @Override
-//    public void deleteBuild(int id) {
-//
-//    }
+
+    @Override
+    public void addBuild(Build build) {
+        client_build.addBuild(build);
+    }
+
+    @Override
+    public void editBuild(Build build) {
+        client_build.editBuild(build);
+    }
+
+    @Override
+    public void deleteBuild(int id) {
+        client_build.deleteBuild(id);
+    }
 }
