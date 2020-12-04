@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.io.Serializable;
 
 
-public class Build implements Serializable {
+public class Build {
     @JsonProperty
     private int id;
     @JsonProperty

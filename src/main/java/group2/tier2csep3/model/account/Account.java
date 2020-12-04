@@ -7,7 +7,7 @@ import group2.tier2csep3.model.forum.posts.PostList;
 
 import java.io.Serializable;
 
-public class Account implements Serializable {
+public class Account {
 
     @JsonProperty
     private int id;

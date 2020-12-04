@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
 
-public class Component implements Serializable {
+public class Component {
     @JsonProperty
     private int id;
     @JsonProperty

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PostList implements Serializable {
+public class PostList{
 
     @JsonProperty
     private ArrayList<Post> posts;
