@@ -8,20 +8,11 @@ import java.util.ArrayList;
 public class ComponentList implements Serializable {
 
     @JsonProperty
-    private ArrayList<Component> Components;
+    private ArrayList<Component> components;
 
     public ComponentList()
     {
-        this.Components = new ArrayList<>();
+        this.components = new ArrayList<>();
     }
 
-    public Component getComponent(int index)
-    {
-        return Components.get(index);
-    }
-
-    public int size()
-    {
-        return Components.size();
-    }
 }

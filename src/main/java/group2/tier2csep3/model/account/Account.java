@@ -18,54 +18,30 @@ public class Account implements Serializable {
     @JsonProperty
     private String password;
     @JsonProperty
-    private PostList Posts;
-//    @JsonProperty
-//    private CommentList Comments;
+    private PostList posts;
 
     public Account()
     {
 
     }
 
-    public PostList getPosts() {
-        return Posts;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setPosts(PostList posts) {
-        Posts = posts;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Override
     public String toString() {

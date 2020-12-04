@@ -8,18 +8,12 @@ import java.util.ArrayList;
 public class CommentList {
 
     @JsonProperty
-    private ArrayList<Comment> Comments;
+    private ArrayList<Comment> comments;
 
     public CommentList()
     {
-        this.Comments = new ArrayList<>();
+        this.comments = new ArrayList<>();
     }
 
-    public ArrayList<Comment> getComments() {
-        return Comments;
-    }
 
-    public void setComments(ArrayList<Comment> comments) {
-        Comments = comments;
-    }
 }

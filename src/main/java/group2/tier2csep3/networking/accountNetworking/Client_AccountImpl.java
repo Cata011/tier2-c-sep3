@@ -59,12 +59,6 @@ public class Client_AccountImpl implements Client_Account {
         NetworkPackage networkPackage = new OtherAccountEnum(NetworkType.OTHERACCOUNT, serializedAccount);
         String input = client.communicate(networkPackage);
 
-        System.out.println("Tier2" + input);
-
-        Account dummy = gson.fromJson(input, Account.class);
-
-        System.out.println(dummy.getPosts());
-
-        return dummy;
+        return gson.fromJson(input, Account.class);
     }
 }

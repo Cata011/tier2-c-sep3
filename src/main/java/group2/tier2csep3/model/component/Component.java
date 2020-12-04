@@ -5,17 +5,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 
 public class Component implements Serializable {
-    @JsonProperty("id")
+    @JsonProperty
     private int id;
-    @JsonProperty("name")
+    @JsonProperty
     private String name;
-    @JsonProperty("type")
+    @JsonProperty
     private String type;
-    @JsonProperty("releaseYear")
+    @JsonProperty
     private String releaseYear;
-    @JsonProperty("brand")
+    @JsonProperty
     private String brand;
-    @JsonProperty("additionalInformation")
+    @JsonProperty
     private String additionalInformation;
 
     public Component() {

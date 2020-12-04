@@ -14,15 +14,7 @@ public class ForumController {
     @GetMapping("/posts")
     public PostList getAllPosts()
     {
-        PostList postList = forumService.getAllPosts();
-
-//        for(int i = 0;i<postList.size();i++)
-//        {
-//            System.out.println("CEVA" + postList.get(i));
-//            System.out.println(postList.getPosts());
-//        }
-
-        return postList;
+        return forumService.getAllPosts();
     }
 
 }

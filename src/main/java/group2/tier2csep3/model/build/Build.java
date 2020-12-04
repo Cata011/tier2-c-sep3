@@ -15,43 +15,11 @@ public class Build implements Serializable {
     @JsonProperty
     private String name;
     @JsonProperty
-    private ComponentList ComponentList;
+    private ComponentList componentList;
 
     public Build()
     {
 
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ComponentList getComponentList() {
-        return ComponentList;
-    }
-
-    public void setComponentList(ComponentList componentList) {
-        this.ComponentList = componentList;
     }
 
     @Override
@@ -60,7 +28,7 @@ public class Build implements Serializable {
                 "id=" + id +
                 ", userId=" + userId +
                 ", name='" + name + '\'' +
-                ", componentList=" + ComponentList +
+                ", componentList=" + componentList +
                 '}';
     }
 }

@@ -7,35 +7,18 @@ import java.util.ArrayList;
 public class PostList {
 
     @JsonProperty
-    private ArrayList<Post> Posts;
+    private ArrayList<Post> posts;
 
     public PostList()
     {
-        this.Posts = new ArrayList<>();
+        this.posts = new ArrayList<>();
     }
 
-    public ArrayList<Post> getPosts() {
-        return Posts;
-    }
-
-    public void setPosts(ArrayList<Post> posts) {
-       Posts = posts;
-    }
-
-    public int size()
-    {
-        return Posts.size();
-    }
-
-    public Post get(int index)
-    {
-        return Posts.get(index);
-    }
 
     @Override
     public String toString() {
         return "PostList{" +
-                "Posts=" + Posts +
+                "Posts=" + posts +
                 '}';
     }
 }
