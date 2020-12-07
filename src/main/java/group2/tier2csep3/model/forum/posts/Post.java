@@ -19,7 +19,7 @@ public class Post {
     @JsonProperty
     private int downVote;
     @JsonProperty
-    private List<Comment> commentList;
+    private List<Comment> comments;
 
     public Post()
     {
@@ -35,7 +35,7 @@ public class Post {
                 ", content='" + content + '\'' +
                 ", upVote=" + upVote +
                 ", downVote=" + downVote +
-                ", Comments=" + commentList +
+                ", Comments=" + comments +
                 '}';
     }
 }
