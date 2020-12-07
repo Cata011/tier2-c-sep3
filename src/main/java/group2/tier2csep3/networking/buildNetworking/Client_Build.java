@@ -1,10 +1,11 @@
 package group2.tier2csep3.networking.buildNetworking;
 
 import group2.tier2csep3.model.build.Build;
-import group2.tier2csep3.model.build.BuildList;
+
+import java.util.List;
 
 public interface Client_Build {
-    BuildList getMyBuilds(int userId);
+    List<Build> getMyBuilds(int userId);
 
     void addBuild(Build build);
 

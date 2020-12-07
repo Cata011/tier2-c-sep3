@@ -17,6 +17,10 @@ public class Component {
     private String brand;
     @JsonProperty
     private String additionalInformation;
+    @JsonProperty
+    private String socketType;
+    @JsonProperty
+    private int energyConsumption;
 
     public Component() {
 

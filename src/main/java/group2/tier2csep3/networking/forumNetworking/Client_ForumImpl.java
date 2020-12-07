@@ -1,13 +1,15 @@
 package group2.tier2csep3.networking.forumNetworking;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import group2.tier2csep3.model.forum.posts.Post;
-import group2.tier2csep3.model.forum.posts.PostList;
 import group2.tier2csep3.networking.communcation.SocketClient;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class Client_ForumImpl implements Client_Forum{
@@ -16,14 +18,14 @@ public class Client_ForumImpl implements Client_Forum{
     private SocketClient client;
 
     @Override
-    public PostList getAllPosts() {
+    public List<Post> getAllPosts() {
         Gson gson = new Gson();
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.POSTS, null);
         String input = client.communicate(networkPackage);
 
         System.out.println("INPUT in forumimpl" + input);
 
-        return gson.fromJson(input, PostList.class);
+        return gson.fromJson(input, new TypeToken<List<Post>>(){}.getType());
     }
 
     @Override

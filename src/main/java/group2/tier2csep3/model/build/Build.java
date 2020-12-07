@@ -1,10 +1,9 @@
 package group2.tier2csep3.model.build;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import group2.tier2csep3.model.component.ComponentList;
-import org.springframework.stereotype.Component;
+import group2.tier2csep3.model.component.Component;
 
-import java.io.Serializable;
+import java.util.List;
 
 
 public class Build {
@@ -15,7 +14,7 @@ public class Build {
     @JsonProperty
     private String name;
     @JsonProperty
-    private ComponentList componentList;
+    private List<Component> componentList;
 
     public Build()
     {

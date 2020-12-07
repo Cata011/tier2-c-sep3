@@ -1,11 +1,9 @@
 package group2.tier2csep3.model.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import group2.tier2csep3.model.build.BuildList;
-import group2.tier2csep3.model.forum.comments.CommentList;
-import group2.tier2csep3.model.forum.posts.PostList;
+import group2.tier2csep3.model.forum.posts.Post;
 
-import java.io.Serializable;
+import java.util.List;
 
 public class Account {
 
@@ -18,7 +16,7 @@ public class Account {
     @JsonProperty
     private String password;
     @JsonProperty
-    private PostList posts;
+    private List<Post> posts;
 
     public Account()
     {

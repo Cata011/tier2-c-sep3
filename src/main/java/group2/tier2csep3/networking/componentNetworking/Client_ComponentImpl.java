@@ -1,12 +1,15 @@
 package group2.tier2csep3.networking.componentNetworking;
 
 import com.google.gson.Gson;
-import group2.tier2csep3.model.component.ComponentList;
+import com.google.gson.reflect.TypeToken;
+import group2.tier2csep3.model.forum.posts.Post;
 import group2.tier2csep3.networking.communcation.SocketClient;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class Client_ComponentImpl implements Client_Component {
@@ -16,11 +19,11 @@ public class Client_ComponentImpl implements Client_Component {
 
 
     @Override
-    public ComponentList getAllComponents() {
+    public List<group2.tier2csep3.model.component.Component> getAllComponents() {
         Gson gson = new Gson();
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.COMPONENTS, null);
         String input =  client.communicate(networkPackage);
-        return gson.fromJson(input, ComponentList.class);
+        return gson.fromJson(input, new TypeToken<List<group2.tier2csep3.model.component.Component>>(){}.getType());
     }
 
     @Override

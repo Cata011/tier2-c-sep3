@@ -1,10 +1,9 @@
 package group2.tier2csep3.model.forum.posts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import group2.tier2csep3.model.forum.comments.CommentList;
-import org.springframework.stereotype.Component;
+import group2.tier2csep3.model.forum.comments.Comment;
 
-import java.io.Serializable;
+import java.util.List;
 
 public class Post {
     @JsonProperty
@@ -20,7 +19,7 @@ public class Post {
     @JsonProperty
     private int downVote;
     @JsonProperty
-    private CommentList commentList;
+    private List<Comment> commentList;
 
     public Post()
     {
