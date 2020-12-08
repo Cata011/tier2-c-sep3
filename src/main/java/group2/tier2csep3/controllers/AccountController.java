@@ -5,8 +5,6 @@ import group2.tier2csep3.service.accountService.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-
 @RestController
 public class AccountController {
 

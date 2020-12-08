@@ -28,9 +28,6 @@ public class ClientConnection implements SocketClient {
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
             String request = gson.toJson(networkPackage);
-
-            System.out.println("BAAAAAAAAAAAAAAAAAAAAAAAA" + request);
-
             byte[] requestBytes = request.getBytes();
             out.write(requestBytes);
 
@@ -48,7 +45,6 @@ public class ClientConnection implements SocketClient {
             }
 
             if(!updatedString.equals("conFromTier3")) {
-                System.out.println("FromTier3"+ updatedString);
                 return updatedString;
             }
             else System.out.println("Client Connection problem");
@@ -59,7 +55,7 @@ public class ClientConnection implements SocketClient {
     }
 
     @Override
-    public void disconnect() {
+    public void disconnect() {  //TODO: will fix later if needed
         try {
 //            in.close();
 //            out.close();

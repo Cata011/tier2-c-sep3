@@ -26,7 +26,6 @@ public class ForumController {
     @PostMapping("/posts")
     public void addPost(@RequestBody Post post)
     {
-        System.out.println(post);
         forumService.addPost(post);
     }
 }

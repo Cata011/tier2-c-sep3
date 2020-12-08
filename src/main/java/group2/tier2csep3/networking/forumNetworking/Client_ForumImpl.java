@@ -22,9 +22,6 @@ public class Client_ForumImpl implements Client_Forum{
         Gson gson = new Gson();
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.POSTS, null);
         String input = client.communicate(networkPackage);
-
-        System.out.println("INPUT in forumimpl" + input);
-
         return gson.fromJson(input, new TypeToken<List<Post>>(){}.getType());
     }
 
@@ -32,9 +29,6 @@ public class Client_ForumImpl implements Client_Forum{
     public void addPost(Post post) {
         Gson gson = new Gson();
         String serializedPost = gson.toJson(post);
-
-        System.out.println("FORUMIMPL" + serializedPost);
-
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.ADDPOST, serializedPost);
         client.communicate(networkPackage);
     }

@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class NetworkPackage {
 
-    @JsonProperty("type")
+    @JsonProperty
     private NetworkType type;
-    @JsonProperty("content")
+    @JsonProperty
     private String content;
 
     public NetworkPackage(NetworkType type, String content) {

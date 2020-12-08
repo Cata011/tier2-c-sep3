@@ -27,7 +27,6 @@ public class ComponentsController {
     @PostMapping("/components")
     public void addNewComponent(@RequestBody Component component)
     {
-        System.out.println(component.toString());
         componentService.addNewComponent(component);
     }
 
