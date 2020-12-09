@@ -1,6 +1,7 @@
 package group2.tier2csep3.controllers;
 
 import group2.tier2csep3.model.build.Build;
+import group2.tier2csep3.model.rating.RatingBuild;
 import group2.tier2csep3.service.buildService.BuildService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -37,4 +38,9 @@ public class BuildsController {
         buildService.deleteBuild(id);
     }
 
+    @PatchMapping("/buildRating")
+    public void giveRating(@RequestBody RatingBuild ratingBuild)
+    {
+        buildService.giveRating(ratingBuild);
+    }
 }

@@ -3,6 +3,7 @@ package group2.tier2csep3.networking.componentNetworking;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import group2.tier2csep3.model.forum.posts.Post;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.networking.communcation.SocketClient;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
@@ -33,5 +34,13 @@ public class Client_ComponentImpl implements Client_Component {
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.ADDNEWCOMPONENT, componentSerialized);
         client.communicate(networkPackage);
 
+    }
+
+    @Override
+    public void giveRating(RatingComponent ratingComponent) {
+        Gson gson = new Gson();
+        String serializedRating = gson.toJson(ratingComponent);
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.RATINGCOMPONENTS, serializedRating);
+        client.communicate(networkPackage);
     }
 }

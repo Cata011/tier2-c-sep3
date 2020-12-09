@@ -1,6 +1,7 @@
 package group2.tier2csep3.networking.buildNetworking;
 
 import group2.tier2csep3.model.build.Build;
+import group2.tier2csep3.model.rating.RatingBuild;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface Client_Build {
     void editBuild(Build build);
 
     void deleteBuild(int id);
+
+    void giveRating(RatingBuild ratingBuild);
 }

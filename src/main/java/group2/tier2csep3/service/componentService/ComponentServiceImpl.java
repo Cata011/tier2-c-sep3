@@ -1,6 +1,7 @@
 package group2.tier2csep3.service.componentService;
 
 import group2.tier2csep3.model.component.Component;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.networking.componentNetworking.Client_Component;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,11 @@ public class ComponentServiceImpl implements ComponentService {
     @Override
     public void addNewComponent(Component component) {
         client_component.addNewComponent(component);
+    }
+
+    @Override
+    public void giveRating(RatingComponent ratingComponent) {
+        client_component.giveRating(ratingComponent);
     }
 
 }

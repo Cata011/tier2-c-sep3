@@ -1,8 +1,10 @@
 package group2.tier2csep3.model.component;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import group2.tier2csep3.model.rating.RatingComponent;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Component {
     @JsonProperty
@@ -21,6 +23,8 @@ public class Component {
     private String socketType;
     @JsonProperty
     private int energyConsumption;
+    @JsonProperty
+    private List<RatingComponent> ratingComponents;
 
     public Component() {
 

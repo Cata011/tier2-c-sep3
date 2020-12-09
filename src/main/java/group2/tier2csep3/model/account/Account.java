@@ -17,6 +17,8 @@ public class Account {
     private String password;
     @JsonProperty
     private List<Post> posts;
+    @JsonProperty
+    private List<Post> savedPosts;
 
     public Account()
     {

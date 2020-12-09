@@ -1,6 +1,7 @@
 package group2.tier2csep3.service.buildService;
 
 import group2.tier2csep3.model.build.Build;
+import group2.tier2csep3.model.rating.RatingBuild;
 import group2.tier2csep3.networking.buildNetworking.Client_Build;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +35,10 @@ public class BuildServiceImpl implements BuildService {
     @Override
     public void deleteBuild(int id) {
         client_build.deleteBuild(id);
+    }
+
+    @Override
+    public void giveRating(RatingBuild ratingBuild) {
+        client_build.giveRating(ratingBuild);
     }
 }

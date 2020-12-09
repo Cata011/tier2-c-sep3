@@ -2,7 +2,10 @@ package group2.tier2csep3.networking.forumNetworking;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import group2.tier2csep3.model.forum.comments.Comment;
 import group2.tier2csep3.model.forum.posts.Post;
+import group2.tier2csep3.model.forum.report.Report;
+import group2.tier2csep3.model.rating.RatingPost;
 import group2.tier2csep3.networking.communcation.SocketClient;
 import group2.tier2csep3.networking.util.NetworkPackage;
 import group2.tier2csep3.networking.util.NetworkType;
@@ -30,6 +33,45 @@ public class Client_ForumImpl implements Client_Forum{
         Gson gson = new Gson();
         String serializedPost = gson.toJson(post);
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.ADDPOST, serializedPost);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void giveRating(RatingPost ratingPost) {
+        Gson gson = new Gson();
+        String serializedRating = gson.toJson(ratingPost);
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.RATINGPOSTS, serializedRating);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void addComment(Comment comment) {
+        Gson gson = new Gson();
+        String serializedComment = gson.toJson(comment);
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.POSTCOMMENT, serializedComment);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void savePost(Post post, int id) {
+        Gson gson = new Gson();
+        String serializedPost = gson.toJson(post);
+        String toSend = serializedPost + "*" + id;
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.SAVEPOST, toSend);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void deletePost(int id) {
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.DELETEPOST, String.valueOf(id));
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void report(Report report) {
+        Gson gson = new Gson();
+        String serializedReport = gson.toJson(report);
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.REPORT, serializedReport);
         client.communicate(networkPackage);
     }
 }

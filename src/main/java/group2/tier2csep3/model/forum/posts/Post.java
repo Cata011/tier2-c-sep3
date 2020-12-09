@@ -2,6 +2,7 @@ package group2.tier2csep3.model.forum.posts;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import group2.tier2csep3.model.forum.comments.Comment;
+import group2.tier2csep3.model.rating.RatingPost;
 
 import java.util.List;
 
@@ -20,6 +21,8 @@ public class Post {
     private int downVote;
     @JsonProperty
     private List<Comment> comments;
+    @JsonProperty
+    private List<RatingPost> ratingPosts;
 
     public Post()
     {
