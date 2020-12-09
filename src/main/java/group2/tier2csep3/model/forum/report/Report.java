@@ -11,6 +11,8 @@ public class Report {
     private int userId;
     @JsonProperty
     private int postId;
+    @JsonProperty
+    private String username;
 
     public Report()
     {

@@ -3,6 +3,8 @@ package group2.tier2csep3.service.forumService;
 import group2.tier2csep3.model.forum.comments.Comment;
 import group2.tier2csep3.model.forum.posts.Post;
 import group2.tier2csep3.model.forum.report.Report;
+import group2.tier2csep3.model.rating.RatingBuild;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.model.rating.RatingPost;
 import group2.tier2csep3.networking.forumNetworking.Client_Forum;
 import org.springframework.stereotype.Service;
@@ -53,5 +55,30 @@ public class ForumServiceImpl implements ForumService {
     @Override
     public void report(Report report) {
         client_forum.report(report);
+    }
+
+    @Override
+    public List<Report> getAllReports() {
+        return client_forum.getAllReports();
+    }
+
+    @Override
+    public void deleteReport(int id) {
+        client_forum.deleteReport(id);
+    }
+
+    @Override
+    public List<RatingPost> getAllPostRatings(int id) {
+        return client_forum.getAllPostRatings(id);
+    }
+
+    @Override
+    public List<RatingBuild> getAllBuildRatings(int id) {
+        return client_forum.getAllBuildRatings(id);
+    }
+
+    @Override
+    public List<RatingComponent> getAllComponentRatings(int id) {
+        return client_forum.getAllComponentRatings(id);
     }
 }

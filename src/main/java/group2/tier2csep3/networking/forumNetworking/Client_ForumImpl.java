@@ -5,6 +5,8 @@ import com.google.gson.reflect.TypeToken;
 import group2.tier2csep3.model.forum.comments.Comment;
 import group2.tier2csep3.model.forum.posts.Post;
 import group2.tier2csep3.model.forum.report.Report;
+import group2.tier2csep3.model.rating.RatingBuild;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.model.rating.RatingPost;
 import group2.tier2csep3.networking.communcation.SocketClient;
 import group2.tier2csep3.networking.util.NetworkPackage;
@@ -74,4 +76,44 @@ public class Client_ForumImpl implements Client_Forum{
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.REPORT, serializedReport);
         client.communicate(networkPackage);
     }
+
+    @Override
+    public void deleteReport(int id) {
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.DELETEREPORT, String.valueOf(id));
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public List<Report> getAllReports() {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.REPORTS, null);
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<Report>>(){}.getType());
+    }
+
+    @Override
+    public List<RatingPost> getAllPostRatings(int id) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.POSTRATINGS,  String.valueOf(id));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<RatingPost>>(){}.getType());
+    }
+
+    @Override
+    public List<RatingBuild> getAllBuildRatings(int id) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.BUILDRATINGS,  String.valueOf(id));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<RatingBuild>>(){}.getType());
+    }
+
+    @Override
+    public List<RatingComponent> getAllComponentRatings(int id) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.COMPONENTRATINGS,  String.valueOf(id));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<RatingComponent>>(){}.getType());
+    }
+
+
 }

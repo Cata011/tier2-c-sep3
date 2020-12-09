@@ -3,6 +3,8 @@ package group2.tier2csep3.service.forumService;
 import group2.tier2csep3.model.forum.comments.Comment;
 import group2.tier2csep3.model.forum.posts.Post;
 import group2.tier2csep3.model.forum.report.Report;
+import group2.tier2csep3.model.rating.RatingBuild;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.model.rating.RatingPost;
 
 import java.util.List;
@@ -21,4 +23,14 @@ public interface ForumService {
     void deletePost(int id);
 
     void report(Report report);
+
+    List<Report> getAllReports();
+
+    void deleteReport(int id);
+
+    List<RatingPost> getAllPostRatings(int id);
+
+    List<RatingBuild> getAllBuildRatings(int id);
+
+    List<RatingComponent> getAllComponentRatings(int id);
 }

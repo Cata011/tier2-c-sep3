@@ -4,6 +4,8 @@ import group2.tier2csep3.model.build.Build;
 import group2.tier2csep3.model.forum.comments.Comment;
 import group2.tier2csep3.model.forum.posts.Post;
 import group2.tier2csep3.model.forum.report.Report;
+import group2.tier2csep3.model.rating.RatingBuild;
+import group2.tier2csep3.model.rating.RatingComponent;
 import group2.tier2csep3.model.rating.RatingPost;
 import group2.tier2csep3.service.forumService.ForumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class ForumController {
         forumService.addPost(post);
     }
 
-    @PostMapping("/savedPosts?UserId={userId}")
+    @PostMapping("/savedPosts/{userId}")
     public void savePost(@RequestBody Post post, @PathVariable int userId)
     {
         forumService.savePost(post, userId);
@@ -47,7 +49,7 @@ public class ForumController {
         forumService.giveRating(ratingPost);
     }
 
-    @DeleteMapping("/posts?Id={id}")
+    @DeleteMapping("/posts/{id}")
     public void deletePost(@PathVariable int id)
     {
         forumService.deletePost(id);
@@ -58,4 +60,35 @@ public class ForumController {
     {
         forumService.report(report);
     }
+
+    @GetMapping("/reports")
+    public List<Report> getAllReports()
+    {
+        return forumService.getAllReports();
+    }
+
+    @DeleteMapping("/reports/{id}")
+    public void deleteReport(@PathVariable int id)
+    {
+        forumService.deleteReport(id);
+    }
+
+    @GetMapping("/postRating/{id}")
+    public List<RatingPost> getAllPostRatings(@PathVariable int id)
+    {
+        return forumService.getAllPostRatings(id);
+    }
+
+    @GetMapping("/buildRating/{id}")
+    public List<RatingBuild> getAllBuildRatings(@PathVariable int id)
+    {
+        return forumService.getAllBuildRatings(id);
+    }
+
+    @GetMapping("/componentRating/{id}")
+    public List<RatingComponent> getAllComponentRatings(@PathVariable int id)
+    {
+        return forumService.getAllComponentRatings(id);
+    }
 }
+
