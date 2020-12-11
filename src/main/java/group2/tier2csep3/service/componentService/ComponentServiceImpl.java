@@ -32,4 +32,14 @@ public class ComponentServiceImpl implements ComponentService {
         client_component.giveRating(ratingComponent);
     }
 
+    @Override
+    public List<RatingComponent> getAllComponentRatings(int id) {
+        return client_component.getAllComponentsRatings(id);
+    }
+
+    @Override
+    public List<Component> getFilteredList(String type) {
+        return client_component.getFilteredList(type);
+    }
+
 }

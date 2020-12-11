@@ -43,4 +43,20 @@ public class Client_ComponentImpl implements Client_Component {
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.RATINGCOMPONENTS, serializedRating);
         client.communicate(networkPackage);
     }
+
+    @Override
+    public List<RatingComponent> getAllComponentsRatings(int id) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.COMPONENTRATINGS,  String.valueOf(id));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<RatingComponent>>(){}.getType());
+    }
+
+    @Override
+    public List<group2.tier2csep3.model.component.Component> getFilteredList(String type) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.FILTERLIST, type);
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<group2.tier2csep3.model.component.Component>>(){}.getType());
+    }
 }

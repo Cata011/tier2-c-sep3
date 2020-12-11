@@ -11,10 +11,6 @@ public class Comment {
     private int postId;
     @JsonProperty
     private String content;
-    @JsonProperty
-    private int upVote;
-    @JsonProperty
-    private int downVote;
 
     public Comment(){
 
@@ -27,8 +23,6 @@ public class Comment {
                 "id=" + id +
                 ", userId=" + userId +
                 ", content='" + content + '\'' +
-                ", upVote=" + upVote +
-                ", downVote=" + downVote +
                 '}';
     }
 }

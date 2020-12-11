@@ -15,4 +15,6 @@ public interface Client_Build {
     void deleteBuild(int id);
 
     void giveRating(RatingBuild ratingBuild);
+
+    List<RatingBuild> getAllBuildRatings(int id);
 }

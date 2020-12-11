@@ -11,4 +11,8 @@ public interface Client_Component {
     void addNewComponent(Component component);
 
     void giveRating(RatingComponent ratingComponent);
+
+    List<RatingComponent> getAllComponentsRatings(int id);
+
+    List<Component> getFilteredList(String type);
 }

@@ -1,11 +1,15 @@
 package group2.tier2csep3.networking.accountNetworking;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import group2.tier2csep3.model.account.Account;
 import group2.tier2csep3.networking.communcation.SocketClient;
-import group2.tier2csep3.networking.util.*;
+import group2.tier2csep3.networking.util.NetworkPackage;
+import group2.tier2csep3.networking.util.NetworkType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class Client_AccountImpl implements Client_Account {
@@ -58,6 +62,37 @@ public class Client_AccountImpl implements Client_Account {
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.OTHERACCOUNT, serializedAccount);
         String input = client.communicate(networkPackage);
 
+        return gson.fromJson(input, Account.class);
+    }
+
+    @Override
+    public List<Account> getFollowedAccounts(int userId) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.FOLLOWEDACCOUNTS, String.valueOf(userId));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<Account>>() {
+        }.getType());
+    }
+
+    @Override
+    public void followAccount(int userId, int userToFollow) {
+        String s = userId + "*" +userToFollow;
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.FOLLOW, s);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public void unfollowAccount(int userId, int userToUnfollow) {
+        String s = userId + "*" +userToUnfollow;
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.UNFOLLOW, s);
+        client.communicate(networkPackage);
+    }
+
+    @Override
+    public Account getUserById(int userId) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.GETUSERBYID, String.valueOf(userId));
+        String input = client.communicate(networkPackage);
         return gson.fromJson(input, Account.class);
     }
 }

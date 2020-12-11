@@ -34,4 +34,16 @@ public class ComponentsController {
         componentService.giveRating(ratingComponent);
     }
 
+    @GetMapping("/componentRating/{id}")
+    public List<RatingComponent> getAllComponentRatings(@PathVariable int id)
+    {
+        return componentService.getAllComponentRatings(id);
+    }
+
+    @GetMapping("/components?Type={type}")
+    public List<Component> getFilteredList(@PathVariable String type)
+    {
+        return componentService.getFilteredList(type);
+    }
+
 }

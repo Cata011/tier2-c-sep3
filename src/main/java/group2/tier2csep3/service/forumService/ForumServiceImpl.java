@@ -16,8 +16,7 @@ public class ForumServiceImpl implements ForumService {
 
     private Client_Forum client_forum;
 
-    public ForumServiceImpl(Client_Forum client_forum)
-    {
+    public ForumServiceImpl(Client_Forum client_forum) {
         this.client_forum = client_forum;
     }
 
@@ -73,12 +72,18 @@ public class ForumServiceImpl implements ForumService {
     }
 
     @Override
-    public List<RatingBuild> getAllBuildRatings(int id) {
-        return client_forum.getAllBuildRatings(id);
+    public void editPost(Post post) {
+        client_forum.editPost(post);
     }
 
     @Override
-    public List<RatingComponent> getAllComponentRatings(int id) {
-        return client_forum.getAllComponentRatings(id);
+    public List<Post> getPostsByUserId(int userId) {
+        return client_forum.getPostByUserId(userId);
     }
+
+    @Override
+    public List<Post> getSavedPosts(int userId) {
+        return client_forum.getSavedPosts(userId);
+    }
+
 }

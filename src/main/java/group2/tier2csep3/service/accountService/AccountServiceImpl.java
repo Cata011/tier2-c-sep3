@@ -4,6 +4,8 @@ import group2.tier2csep3.model.account.Account;
 import group2.tier2csep3.networking.accountNetworking.Client_Account;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AccountServiceImpl implements AccountService {
 
@@ -36,5 +38,25 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account getUserByUsername(String username) {
         return client_account.getUserByUsername(username);
+    }
+
+    @Override
+    public List<Account> getFollowedAccounts(int userId) {
+        return client_account.getFollowedAccounts(userId);
+    }
+
+    @Override
+    public void followAccount(int userId, int userToFollow) {
+        client_account.followAccount(userId, userToFollow);
+    }
+
+    @Override
+    public void unfollowAccount(int userId, int userToUnfollow) {
+        client_account.unfollowAccount(userId, userToUnfollow);
+    }
+
+    @Override
+    public Account getUserById(int userId) {
+        return client_account.getUserById(userId);
     }
 }

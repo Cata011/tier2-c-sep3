@@ -16,10 +16,6 @@ public class Post {
     @JsonProperty
     private String content;
     @JsonProperty
-    private int upVote;
-    @JsonProperty
-    private int downVote;
-    @JsonProperty
     private List<Comment> comments;
     @JsonProperty
     private List<RatingPost> ratingPosts;
@@ -36,8 +32,6 @@ public class Post {
                 ", userId=" + userId +
                 ", username='" + username + '\'' +
                 ", content='" + content + '\'' +
-                ", upVote=" + upVote +
-                ", downVote=" + downVote +
                 ", Comments=" + comments +
                 '}';
     }

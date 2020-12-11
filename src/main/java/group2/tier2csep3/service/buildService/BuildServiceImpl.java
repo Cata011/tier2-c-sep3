@@ -41,4 +41,9 @@ public class BuildServiceImpl implements BuildService {
     public void giveRating(RatingBuild ratingBuild) {
         client_build.giveRating(ratingBuild);
     }
+
+    @Override
+    public List<RatingBuild> getAllBuildRatings(int id) {
+        return client_build.getAllBuildRatings(id);
+    }
 }

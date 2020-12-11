@@ -19,6 +19,8 @@ public class Account {
     private List<Post> posts;
     @JsonProperty
     private List<Post> savedPosts;
+    @JsonProperty
+    private List<Account> followedAccounts;
 
     public Account()
     {

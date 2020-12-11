@@ -43,4 +43,11 @@ public class BuildsController {
     {
         buildService.giveRating(ratingBuild);
     }
+
+    @GetMapping("/buildRating/{id}")
+    public List<RatingBuild> getAllBuildRatings(@PathVariable int id)
+    {
+        return buildService.getAllBuildRatings(id);
+    }
+
 }

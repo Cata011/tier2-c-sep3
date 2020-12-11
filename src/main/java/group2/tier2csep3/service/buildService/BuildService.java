@@ -15,4 +15,6 @@ public interface BuildService {
     void deleteBuild(int id);
 
     void giveRating(RatingBuild ratingBuild);
+
+    List<RatingBuild> getAllBuildRatings(int id);
 }

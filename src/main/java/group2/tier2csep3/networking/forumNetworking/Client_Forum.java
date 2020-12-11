@@ -30,7 +30,9 @@ public interface Client_Forum {
 
     List<RatingPost> getAllPostRatings(int id);
 
-    List<RatingBuild> getAllBuildRatings(int id);
+    void editPost(Post post);
 
-    List<RatingComponent> getAllComponentRatings(int id);
+    List<Post> getPostByUserId(int userId);
+
+    List<Post> getSavedPosts(int userId);
 }

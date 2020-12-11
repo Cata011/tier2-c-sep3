@@ -100,20 +100,27 @@ public class Client_ForumImpl implements Client_Forum{
     }
 
     @Override
-    public List<RatingBuild> getAllBuildRatings(int id) {
+    public void editPost(Post post) {
         Gson gson = new Gson();
-        NetworkPackage networkPackage = new NetworkPackage(NetworkType.BUILDRATINGS,  String.valueOf(id));
-        String input = client.communicate(networkPackage);
-        return gson.fromJson(input, new TypeToken<List<RatingBuild>>(){}.getType());
+        String serializedPost = gson.toJson(post);
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.EDITPOST, serializedPost);
+        client.communicate(networkPackage);
     }
 
     @Override
-    public List<RatingComponent> getAllComponentRatings(int id) {
+    public List<Post> getPostByUserId(int userId) {
         Gson gson = new Gson();
-        NetworkPackage networkPackage = new NetworkPackage(NetworkType.COMPONENTRATINGS,  String.valueOf(id));
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.GETPOSTSBYUSERID, String.valueOf(userId));
         String input = client.communicate(networkPackage);
-        return gson.fromJson(input, new TypeToken<List<RatingComponent>>(){}.getType());
+        return gson.fromJson(input, new TypeToken<List<Post>>(){}.getType());
     }
 
+    @Override
+    public List<Post> getSavedPosts(int userId) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.GETSAVEDPOSTS, String.valueOf(userId));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<Post>>(){}.getType());
+    }
 
 }

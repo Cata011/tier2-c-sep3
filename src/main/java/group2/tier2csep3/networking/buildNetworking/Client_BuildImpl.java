@@ -58,4 +58,12 @@ public class Client_BuildImpl implements Client_Build {
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.RATINGBUILDS, serializedRating);
         client.communicate(networkPackage);
     }
+
+    @Override
+    public List<RatingBuild> getAllBuildRatings(int id) {
+        Gson gson = new Gson();
+        NetworkPackage networkPackage = new NetworkPackage(NetworkType.BUILDRATINGS, String.valueOf(id));
+        String input = client.communicate(networkPackage);
+        return gson.fromJson(input, new TypeToken<List<RatingBuild>>(){}.getType());
+    }
 }
