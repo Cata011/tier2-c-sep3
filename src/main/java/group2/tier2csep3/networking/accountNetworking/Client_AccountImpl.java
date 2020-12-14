@@ -84,6 +84,9 @@ public class Client_AccountImpl implements Client_Account {
     @Override
     public void unfollowAccount(int userId, int userToUnfollow) {
         String s = userId + "*" +userToUnfollow;
+
+        System.out.println(s);
+
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.UNFOLLOW, s);
         client.communicate(networkPackage);
     }

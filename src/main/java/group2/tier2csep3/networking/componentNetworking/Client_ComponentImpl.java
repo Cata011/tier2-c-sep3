@@ -24,6 +24,9 @@ public class Client_ComponentImpl implements Client_Component {
         Gson gson = new Gson();
         NetworkPackage networkPackage = new NetworkPackage(NetworkType.COMPONENTS, null);
         String input =  client.communicate(networkPackage);
+
+        System.out.println(input);
+
         return gson.fromJson(input, new TypeToken<List<group2.tier2csep3.model.component.Component>>(){}.getType());
     }
 

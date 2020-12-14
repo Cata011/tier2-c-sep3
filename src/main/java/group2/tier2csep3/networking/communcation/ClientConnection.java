@@ -31,7 +31,7 @@ public class ClientConnection implements SocketClient {
             byte[] requestBytes = request.getBytes();
             out.write(requestBytes);
 
-            byte[] data = new byte[16*1024];
+            byte[] data = new byte[1024 * 1024];
             int count = in.read(data);
             String string = new String(data);
             String updatedString = "";

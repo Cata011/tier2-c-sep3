@@ -54,7 +54,7 @@ public class AccountController {
         accountService.followAccount(userId, userToFollow);
     }
 
-    @DeleteMapping("/unfollowAccount/{userId}")
+    @PostMapping("/unfollowAccount/{userId}")
     public void unfollowAccount(@PathVariable int userId, @RequestBody int userToUnfollow) {
         accountService.unfollowAccount(userId, userToUnfollow);
     }

@@ -11,6 +11,8 @@ public class Comment {
     private int postId;
     @JsonProperty
     private String content;
+    @JsonProperty
+    private String username;
 
     public Comment(){
 
